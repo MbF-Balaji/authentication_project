@@ -1,0 +1,13 @@
+The route is really easy and is just a single entry in our routes.rb file:
+
+Rails.application.routes.draw do
+  get "/pages/:page" => "pages#show"
+end
+This will send every url that matches /pages/ to our pages controller we created above. Any of the following would now work:
+
+/pages/about
+/pages/home
+/pages/features
+Based on the controller we created above, we now have to place our static pages in the app/views/pages directory and they will show up.
+
+<h1>about page </h2>
