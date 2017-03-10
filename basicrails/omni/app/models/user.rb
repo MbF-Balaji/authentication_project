@@ -1,7 +1,7 @@
  class User < ActiveRecord::Base
      devise :database_authenticatable, :registerable, :recoverable,
             :rememberable, :trackable, :validatable ,
-            :omniauthable, :omniauth_providers => [:facebook]
+            :omniauthable, :omniauth_providers => [:facebook, :github, :twitter]
      has_many :products 
 
      def self.from_omniauth(auth)
@@ -9,8 +9,9 @@
          user.provider = auth.provider
          user.uid = auth.uid
          user.password = Devise.friendly_token[0,20]
-         if ["facebook"].include?(auth.provider)
+         if ["facebook"] || ["github"] || ["twitter"].include?(auth.provider)
            user.save(:validate => false)
+           
          else
            user.email = auth.info.email
            user.save
