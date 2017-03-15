@@ -1,6 +1,6 @@
  class User < ActiveRecord::Base
      devise :database_authenticatable, :registerable, :recoverable,
-            :rememberable, :trackable, :validatable ,
+            :rememberable, :trackable, :validatable , :confirmable,
             :omniauthable, :omniauth_providers => [:facebook, :github, :twitter]
      has_many :products 
 
