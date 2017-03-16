@@ -1,0 +1,21 @@
+<header>
+    <nav>
+      <ul>
+        <li><%= link_to "stories", stories_path %></li>
+        <li><%= link_to "motorcyles", root_path %></li>
+        <li><%= link_to image_tag('logo.png'), root_path, :alt => "images", :class => 'logo' %></li>
+        <li><%= link_to "museum", root_path %></li>
+        <li><%= link_to "contact", contact_path %></li>
+      </ul>
+    </nav>
+
+    <%= link_to image_tag('logo.png'), root_path, :alt => "images" , :class => 'mobilelogo'%>
+    <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
