@@ -1,0 +1,23 @@
+<% content_for :title, "Stories" %>
+<div class="subwrap">
+
+  <head>
+    <tr>
+      
+      <center><h1>Terms and conditions</h1></center>
+    
+    </tr>
+  </head>
+
+  <center>
+    <% @terms.each do |term| %>
+      <!-- <tr> -->
+        
+        <td><%= raw term.terms_and_conditions %></td>
+        <!-- <td><%= link_to 'Show', term %></td> -->
+        <!-- <td><%= link_to 'Edit', edit_term_path(term) %></td> -->
+        <!-- <td><%= link_to 'Destroy', term, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </center>
+</div>
