@@ -1,0 +1,35 @@
+<div class="subwrap">
+<p id="notice"><%= notice %></p>
+
+      <!-- Story detail Block -->
+      <div class="storydetail">
+        <div class="container">
+          <div class="storydetail-top">
+           
+           <%= image_tag(@home.covers) %>
+               <div class="storydetail-top-content">
+
+                 <%= raw @home.title %>
+                 <%=raw @home.content %>
+                </div>
+           </div>
+                <ul class="storydetail-bottom">
+
+                <li>
+              <h2><%= raw @home.bike_name %></h2>
+              <span><%= raw @home.bike_year %></span>
+            </li>
+            <li>
+              <h2><%= raw @home.owner_name %></h2>
+              <span><%= raw @home.city %></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+  <div class="container">
+        <div class="col-xs-7 center-block generic">
+         
+        </div>
+        </div>
+
+</div>

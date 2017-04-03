@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321131432) do
+ActiveRecord::Schema.define(version: 20170330151719) do
 
   create_table "cama_comments", force: :cascade do |t|
     t.string   "author"
@@ -164,6 +164,71 @@ ActiveRecord::Schema.define(version: 20170321131432) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
+  create_table "conta", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "country"
+    t.integer  "phone"
+    t.text     "message"
+    t.string   "male"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "country"
+    t.integer  "phone"
+    t.text     "message"
+    t.string   "male"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "destroys", force: :cascade do |t|
+    t.string   "contact"
+    t.string   "name"
+    t.string   "email"
+    t.string   "country"
+    t.integer  "phone"
+    t.text     "message"
+    t.string   "male"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "homes", force: :cascade do |t|
+    t.string   "bike_name"
+    t.integer  "bike_year"
+    t.string   "owner_name"
+    t.string   "city"
+    t.string   "content",                  limit: 20
+    t.text     "image1"
+    t.text     "image2"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "title",                    limit: 10
+    t.text     "main_content"
+    t.string   "cover_image"
+    t.string   "cover_image_file_name"
+    t.string   "cover_image_content_type"
+    t.integer  "cover_image_file_size"
+    t.datetime "cover_image_updated_at"
+    t.string   "coverimage_file_name"
+    t.string   "coverimage_content_type"
+    t.integer  "coverimage_file_size"
+    t.datetime "coverimage_updated_at"
+    t.string   "covers_file_name"
+    t.string   "covers_content_type"
+    t.integer  "covers_file_size"
+    t.datetime "covers_updated_at"
+  end
+
   create_table "plugins_attacks", force: :cascade do |t|
     t.string   "path"
     t.string   "browser_key"
@@ -185,6 +250,15 @@ ActiveRecord::Schema.define(version: 20170321131432) do
     t.text     "settings"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "year"
+    t.string   "owner"
   end
 
   create_table "terms", force: :cascade do |t|

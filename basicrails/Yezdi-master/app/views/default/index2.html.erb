@@ -1,0 +1,31 @@
+<div class="subwrap">
+
+<p id="notice"><%= notice %></p>
+<% @homes.each do |t| %>
+<div class="container productstory-block">
+  <div class="productstory clearfix">
+       <div class="productstory-image"   style="background-image: url(<%= t.image.url %>);background-size: contain;"></div> 
+
+    <div class="productstory-content">
+      <div class="productstory-content-block">
+             <%=raw t.title %>
+             <%=raw t.content %>
+          
+        <a href="/default/1/<%=  %>" class="button">READ STORY</a>
+
+
+      </div>      
+      <ul class="productstory-content-title">
+        <li><h4><%=  t.bike_name %></h4><%= t.bike_year %></li>
+        <li><h4><%=  t.owner_name %></h4> <%= t.city %></li>
+        <li><h4>STORY #<%= t.id %></h4> OF <%= @total %></li>
+      </ul>
+       
+
+
+    </div>        
+   
+  </div>
+</div>
+<% end %>
+</div> 
