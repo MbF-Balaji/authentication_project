@@ -1,0 +1,6 @@
+ <% @gallery.images.each_with_index do |image, index| %>
+     
+      <%= image_tag(image.url) %>
+            <%= link_to "Delete", gallery_images_path(@gallery, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
+
+      <% end %>
